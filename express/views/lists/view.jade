@@ -1,5 +1,9 @@
 extends ../layout
 
+block links
+  li
+    a(href="/groups/" + list.id) List groups
+
 block content
   h2= list.name
 
@@ -10,7 +14,7 @@ block content
       input(type='email', name='email', placeholder='email address')
       input(type='submit', class='btn', value='Add Member')
 
-  h3= Members
+  h3 Members
   table(class='table table-bordered')
     tr
       each header in ['Email', 'Subscribed Since', 'Member Rating']

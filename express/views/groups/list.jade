@@ -1,0 +1,21 @@
+extends ../layout
+
+block content
+  h2= list.name
+
+  h3 Interest Groups
+  table(class='table table-bordered')
+    tr
+      each header in ['Name', 'Groups']
+        th= header
+    each interest in interestGroups
+      tr
+        td= interest.name
+        td(width="20%")
+          ul.nav.nav-pills.nav-stacked
+            each group in interest.groups
+              li
+                a(href="#")
+                  span.badge.pull-right= group.subscribers
+                  = group.name
+
