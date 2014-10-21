@@ -5,14 +5,15 @@ html
     link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
   body
     div(class="container")
-      div(class="navbar",style="margin-top:20px")
+      div(class="navbar navbar-default",style="margin-top:20px")
         div(class="navbar-inner")
           a(class="brand", href="/") MC API Node.js Example
-          ul(class="nav")
+          ul(class="nav navbar-nav")
             li
               a(href="/lists") Lists
             li
               a(href="/reports") Reports
+            block links
       if success_flash
         p(class="text-success")= success_flash
       if error_flash

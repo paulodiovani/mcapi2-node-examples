@@ -6,6 +6,7 @@
 var express = require('express')
   , routes = require('./routes')
   , lists = require('./routes/lists')
+  , groups = require('./routes/groups')
   , reports = require('./routes/reports')
   , http = require('http')
   , path = require('path')
@@ -48,6 +49,7 @@ app.get('/', routes.index);
 app.get('/lists', lists.list);
 app.get('/lists/:id', lists.view);
 app.post('/lists/:id/subscribe', lists.subscribe);
+app.get('/groups/:id', groups.list);
 app.get('/reports', reports.list);
 app.get('/reports/:id', reports.view);
 
